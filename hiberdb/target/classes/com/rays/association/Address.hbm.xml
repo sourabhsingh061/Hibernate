@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.rays.association.Address" table="address">
+
+		<id name="addressId" column="addressid">
+			<generator class="increment">
+				<param name="property">s</param>
+			</generator>
+		</id>
+		<property name="city" column="city" length="10" />
+		<property name="state" column="state" length="10" />
+
+		<one-to-one name="s" class="str.Student" cascade="all" />
+
+	</class>
+</hibernate-mapping>
